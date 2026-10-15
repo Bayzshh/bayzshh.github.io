@@ -3,20 +3,110 @@
 <head>
     <title>Web Bayzshh</title>
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 150px;
-            color: white;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 { font-size: 42px; }
-        p { font-size: 20px; opacity: 0.9; }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .card h2 {
+            color: #764ba2;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        .card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .tombol {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .tombol:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        .tombol-hijau {
+            background: #28a745;
+        }
+        .tombol-hijau:hover {
+            background: #218838;
+        }
+        .tombol-merah {
+            background: #dc3545;
+        }
+        .tombol-merah:hover {
+            background: #c82333;
+        }
+        #pesan {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1>Halo! 👋 Ini Webku!</h1>
-    <p>Selamat datang di web Bayzshh! ✨</p>
+    <div class="container">
+        <h1>✨ Selamat Datang di Webku ✨</h1>
+
+        <div class="card">
+            <h2>👋 Klik Aku Dong!</h2>
+            <p>Coba tekan tombol di bawah ini ya</p>
+            <button class="tombol" onclick="tampilPesan()">Klik Saya! 🎉</button>
+            <div id="pesan">
+                <h3>✅ Berhasil!</h3>
+                <p>Kamu berhasil menekan tombolnya! Hebat! 😊</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🌐 Buka Halaman Lain</h2>
+            <p>Tekan tombol untuk pergi ke tempat lain</p>
+            <a href="https://www.google.com" target="_blank" class="tombol tombol-hijau">Cari di Google 🔍</a>
+            <a href="https://www.youtube.com" target="_blank" class="tombol tombol-merah">Nonton YouTube 📺</a>
+        </div>
+    </div>
+
+    <script>
+        function tampilPesan() {
+            document.getElementById('pesan').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
